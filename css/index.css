@@ -177,6 +177,7 @@ a{
 	width: 740px;
 	float: left;
 	margin-left: 10px;
+	position: relative;
 }
 .top-white .title a{
 	text-decoration: none;
@@ -240,13 +241,116 @@ input.text:focus .right{
 .top-white .found .right:hover .icon-sousuo{
 	color: white;
 }
+
+/* 下拉菜单开始 */
+.top-white .navmenu{
+	height: 240px;
+	width: 1240px;
+	position: absolute;
+    top: 80px;
+    left: -236px;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+    display: none;
+    /* padding-top: 40px; */
+
+}
+.top-white .navmenu ul{
+	height: 220px;
+	/* width: 100%; */
+	display: flex;
+	justify-content: space-between;
+	background-color: #fff;
+	position: absolute;
+	/* position: relative; */
+	top: 20px;
+
+}
+.top-white .navmenu ul li{
+	height: 220px;
+	background-color: white;
+	position: relative;
+    float: left;
+    width: 248px;
+    margin-right: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.top-white .navmenu ul li:after{
+	position: absolute;
+    left: 0;
+    top: 35px;
+    width: 1px;
+    height: 100px;
+    content: "";
+    background-color: #e0e0e0;
+}
+.top-white .navmenu ul li .figure{
+	width: 160px;
+    height: 100px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+.top-white .navmenu ul li .figure img{
+	width: 100%;
+	height: 100%;
+	display: block;
+	margin: 0 auto;
+}
+.top-white .navmenu ul li a{
+	width: 100%;
+	height: 20px;
+	margin-right: 0;
+	padding-right: 0;
+	margin-top: 10px;
+	font-size: 12px;
+	color: #333;
+	text-align: center;
+	line-height: 20px;
+	text-align: center;
+	text-decoration: none;
+}
+.top-white .navmenu ul li .price{
+	height: 20px;
+    color: #ff6700;
+    font-size: 12px;
+    text-align: center;
+}
+.top-white .navmenu ul li .flags{
+    display: block;
+    height: 18px;
+    width: 26px;
+    font-size: 12px;
+    color: #ff6700;
+    text-align: center;
+    padding: 1px 20px;
+    border: 1px solid #ff6700;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.top-white .navmenu ul li.first:after {
+	content: "";
+    background-color: #fff;
+}
+.top-white .navmenu ul li .withoutnew{
+	opacity: 0;
+}
+/* 下拉菜单结束 */
 /* 白导航栏结束 */
 
 
 /* banner图开始 */
 .banner{
 	width: 100%;
-	height: 460px;
+	height: 466px;
 	background: #fff;
 }
 .banner .container{
@@ -256,16 +360,58 @@ input.text:focus .right{
 	position: relative;
 }
 .banner .container .text{
-	width: 230px;
+	width: 240px;
+	height: 465px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 99;
+	background-color: rgba(0, 0, 0,0.4);
+}
+.banner .text .ul-outer{
+	width: 240px;
 	height: 460px;
-	background-color: rgb(91, 81, 68);
-	float: left;
+	padding: 20px 0;
+	z-index: 10;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.banner .text .ul-outer li.outer{
+/* 	width: 100%; */
+	height: 42px;
+	line-height: 42px;
+	background-color: rgba(0, 0, 0, 0);
+	margin-right: 0;
+	margin-bottom: 0;
+	overflow: visible;
+}
+.banner .text .ul-outer li.outer a.bn-choose-title{
+	display: block;
+	width: 214px;
+	height: 100%;
+	color: #fff;
+	margin-left: 26px;
+	margin-right: 0;
+	background-color: rgba(0, 0, 0, 0);
+	font-size: 14px;
+	text-decoration: none;
+	position: relative;
 
 }
-.banner .container .text .title{
+/* .banner .text ul.ul-outer li.outer:hover{
+	background: #ff6700;
+} */
+.banner .text ul.ul-outer li.outer a.bn-choose-title i{
+	color: #fff;
+	font-style: normal;
+	position: absolute;
+	right: 24px;
+	top: 0;
+}
+/* .banner .container .text .title{
 	width: 100%;
 	height: 42px;
-	background-color: rgba(91, 81, 68,0.4);
 	line-height: 40px;
 }
 .banner .container .text .title:hover{
@@ -289,8 +435,7 @@ input.text:focus .right{
 	text-decoration: none;
 	font-size: 14px;
 	color: white;
-
-}
+} */
 .banner .container .text .title a i{
 	/* 文字样式：normal正常/italic倾斜 */
 	font-style: normal;
@@ -299,14 +444,70 @@ input.text:focus .right{
 	top: 0;
 	color: white;
 }
+
+/* 选项卡开始 */
+.banner .text ul.ul-outer li.outer .bn-choose{
+	/* width: 992px; */
+	height: 460px;
+	background: #fff;
+	position: absolute;
+	top: 0px;
+	left: 234px;
+	z-index: 20;
+	border: 1px solid #e0e0e0;
+	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+	display: flex;
+	display: none;
+}
+.banner .bn-choose ul.inner{
+	width: 248px;
+	height: 458px;
+	padding: 2px 0;
+}
+.banner .bn-choose ul.inner li{
+	position: relative;
+    float: left;
+    width: 265px;
+    height: 76px;
+    margin-bottom: 0;
+}
+.banner .bn-choose ul.inner li.inner a{
+	padding: 18px 20px;
+	display: flex;
+}
+.banner .bn-choose ul.inner li.inner img{
+	width: 40px;
+	height: 40px;
+	margin-right: 12px;
+	display: block;
+}
+.banner .bn-choose ul.inner li.inner span{
+	line-height: 40px;
+	color: #333;
+	font-size: 14px;
+}
+/* 选项卡结束 */
+
+
 .banner .container .picture{
 	width: 100%;
 	height: 100%;
-	background-image: url('../img/main.jpg');
+	position: relative;
+	overflow: hidden;
+/* 	background-image: url('../img/main.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 /* 	margin-left: 230px; */
-	background-position: center;
+	background-position: center; */
+}
+
+.banner .container .picture .imgs img{
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 1240px;
 }
 .banner .leftBtn{
 	width: 40px;
@@ -317,10 +518,11 @@ input.text:focus .right{
 	top: 0;
 	bottom: 0;
 	margin: auto 0;
-	margin-left: 230px;
+	margin-left: 240px;
 }
 .banner .leftBtn:hover{
 	background-position:0 0;
+	cursor: pointer;
 }
 .banner .rightBtn{
 	width: 40px;
@@ -335,24 +537,33 @@ input.text:focus .right{
 }
 .banner .container .rightBtn:hover{
 	background-position:-42px 0;
+	cursor: pointer;
 } 
-.banner .dot{
-	margin-right: 40px;
+.banner .picture .dots{
+	width: 100px;
+	height: 20px;
+	position: absolute;
+	right: 40px;
+	bottom: 20px;
 }
-.banner .box{
+.banner .picture .dots .point{
 	width: 6px;
 	height: 6px;
+	margin-right: 6px;
 	background-color: rgba(134, 118, 100, 0.8);
 	/* 圆角设置为50%为圆，边长一半*/
 	border-radius: 50%;
-	float: right;
+	float: left;
 	border: 3px solid #AB9F93;
-	margin-left: 8px;
-	margin-top: 420px;
 }
-.banner .box:hover{
+.banner .picture .dots .active{
 	background-color: rgba(255, 255, 255, 0.8);
 	border: 3px solid #8D8479;
+}
+.banner .picture .dots .point:hover{
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 3px solid #8D8479;
+	cursor: pointer;
 }
 
 /* banner图结束 */
@@ -506,6 +717,9 @@ input.text:focus .right{
 	float: left;
 	margin-top:30px;
 }
+.flashover .container .left:hover{
+	color: #ff6700;
+}
 .flashover .container .right{
 	width: 36px;
 	height: 22px;
@@ -514,9 +728,12 @@ input.text:focus .right{
 	font-weight: bold;
 	line-height: 22px;
 	text-align: center;
-	color: #B0B0B2;
+	color: #E0E0E0;
 	float: right;
 	margin-top:30px;
+}
+.flashover .container .active{
+	color: #B0B0B2;
 }
 .flashover .container .right:hover{
 	color: #ff6700;
@@ -547,6 +764,7 @@ input.text:focus .right{
 	width: 1240px;
 	list-style: none;
 	margin: 0 auto;
+	position: relative;
 }
 ul li{
 	width: 232px;
@@ -567,18 +785,48 @@ ul li{
 }
 .flashover .container ul li:nth-child(1){
 	border-top: 1px solid #E53935;
+	background-color: #F1EDED;
 }
-.flashover .container ul li:nth-child(2){
+.flashover .container ul  .list li:nth-child(1){
 	border-top: 1px solid #FFAC13;
+	background-color: #FAFAFA;
 }
-.flashover .container ul li:nth-child(3){
+.flashover .container ul .list li:nth-child(2){
 	border-top: 1px solid #83C44E;
 }
-.flashover .container ul li:nth-child(4){
+.flashover .container ul .list li:nth-child(3){
 	border-top: 1px solid #2196F3;
 }
-.flashover .container ul li:nth-child(5){
+.flashover .container ul .list li:nth-child(4){
 	border-top: 1px solid #E53935;
+	margin-right: 0;
+}
+.flashover .container ul .list li:nth-child(5){
+	border-top: 1px solid #E53935;
+	margin-left: 20px;
+}
+.flashover .container ul .list li:nth-child(6){
+	border-top: 1px solid #E53935;
+}
+.flashover .container ul .list li:nth-child(7){
+	border-top: 1px solid #E53935;
+}
+.flashover .container ul .list li:nth-child(8){
+	border-top: 1px solid #E53935;
+	margin-right: 0;
+}
+.flashover ul .list-container{
+	width: 998px;
+	height: 300px;
+	position: absolute;
+	left: 252px;
+	top: 0;
+	overflow: hidden;
+}
+.flashover ul .list-container .list{
+	width: 1996px;
+	height: 300px;
+	transition: all 1s;
 }
 .flashover ul li img{
 	margin-left: 34px;
@@ -586,12 +834,9 @@ ul li{
 	width: 164px;
 	height: 160px;
 }
-.flashover ul li:nth-child(5){
+/* .flashover ul li:nth-child(5){
 	margin-right: 0;
-}
-.flashover ul li:nth-child(1){
-	background-color: #F1EDED;
-}
+} */
 .flashover ul li .title{
 	color: red;
 	font-size: 20px;
@@ -994,6 +1239,9 @@ del{
 	float: left;
 	margin-top:30px;
 }
+.commend .container .left:hover{
+	color: #ff6700;
+}
 .commend .container .right{
 	width: 36px;
 	height: 22px;
@@ -1009,6 +1257,25 @@ del{
 .commend .container .right:hover{
 	color: #ff6700;
 }
+.commend .list{
+	width: 1240px;
+	overflow: hidden;
+}
+.commend .container ul{
+	width: 3720px;
+	height: 300px;
+	transition: all 1s;
+
+}
+.commend ul li:nth-child(5){
+	margin-right: 0;
+}
+.commend ul li:nth-child(10){
+	margin-right: 0;
+}
+.commend ul li:nth-child(15){
+	margin-right: 0;
+}
 .commend ul li img{
 	margin-left: 34px;
 	margin-top: 20px;
@@ -1021,9 +1288,9 @@ del{
 .commend ul li h5{
 	margin-top: 40px;
 }
-.commend ul li:nth-child(5){
+/* .commend ul li:nth-child(5){
 	margin-right: 0;
-}
+} */
 /* 为你推荐结束 */
 
 
@@ -1146,7 +1413,7 @@ del{
 	height: 40px;
 	border-top: 1px solid #2196F3;	
 }
-.content ul li{
+.content ul .first{
 	width: 295px;
 	height: 400px; 
 	float: left;
@@ -1156,7 +1423,61 @@ del{
 	list-style: none;
 	position: relative;
 }
-.content ul li img{
+.content ul .second{
+	width: 295px;
+	height: 400px; 
+	float: left;
+	background-color: #FAFAFA;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	list-style: none;
+	position: relative;
+}
+.content ul .third{
+	width: 295px;
+	height: 400px; 
+	float: left;
+	background-color: #FAFAFA;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	list-style: none;
+	position: relative;
+}
+.content ul .fourth{
+	width: 295px;
+	height: 400px; 
+	float: left;
+	background-color: #FAFAFA;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	list-style: none;
+	position: relative;
+}
+.content ul .first .message{
+	width: 295px;
+	position: absolute;
+	top: 62px;
+	left: 295px;
+}
+.content ul .second .message{
+	width: 295px;
+	position: absolute;
+	top: 62px;
+	left: 295px;
+}
+.content ul .third .message{
+	width: 295px;
+	position: absolute;
+	top: 62px;
+	left: 295px;
+}
+.content ul .fourth .message{
+	width: 295px;
+	position: absolute;
+	top: 62px;
+	left: 295px;
+}
+.content ul img{
 	width: 243px;
 	height: 173px;
 	margin-left: 26px;
@@ -1181,77 +1502,77 @@ del{
 	color: #333333;
 	font-weight: normal;
 }
-.content ul li h5{
-	text-align: left;
+.content ul  h5{
 	margin-top: 8px;
-	margin-left: 26px;
 	text-align: center;
-	margin-right: 26px;
 	height: 32px;
 }
-.content ul li span{
+.content ul  h5 a{
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+}
+.content ul  span{
 	margin-bottom: 10px;
 	text-align: center;
 	width: 100%;
 }
-
-.content ul li span p{
+.content ul span p{
 	text-align: center;
 	margin-top: 0px;
 }
-.content ul li i{
+.content ul h4{
+	border-color: #ffac13;
+	background: #fff;
+	font-size: 12px;
+    color: #ffac13;
+}
+/* .content ul i{
 	text-align: right;
 	margin-right: 30px;
 	margin-top: 10px;
 	font-size: 15px;
 	float: right;
-}
-.content ul li:nth-child(4){
+} */
+.content ul .fourth{
 	margin-right: 0;
 }
 .content .num{
-	width: 120px;
-	height: 10px;
-	margin: 0 auto;
+	width: 140px;
+	height: 20px;
 	display: block;
+	position: absolute;
+	left: 77px;
+	bottom: 10px;
+	display: flex;
+	justify-content: space-around;
 }
-.content .dot{
+.content .num .dot{
 	width: 6px;
 	height: 6px;
 	border-radius: 50px;
-	background-color: #ffffff;
+	background-color: rgba(176, 176, 176, 0.8);
+	margin-bottom: 2px;
+	display: inline-block;
+}
+.content .num .active{
+	width: 6px;
+	height: 6px;
+	border-radius: 50px;
+	background-color: white;
 	border: 2px solid #ff6700;
-	margin-right: 24px;
 	display: inline-block;
 	margin-bottom: 2px;
 }
-.content .dot1{
-	width: 6px;
-	height: 6px;
-	border-radius: 50px;
-	background-color: rgba(176, 176, 176, 0.8);
-	margin-right: 24px;
-	margin-bottom: 2px;
-	display: inline-block;
-}
-.content .dot2{
-	width: 6px;
-	height: 6px;
-	border-radius: 50px;
-	background-color: rgba(176, 176, 176, 0.8);
-	margin-bottom: 2px;
-	display: inline-block;
-}
-.content .dot1:hover{
+.content .dot:hover{
 	background-color: #ff6700;
+	cursor: pointer;
 }
-.content .dot1:hover{
-	background-color: #ff6700;
-}
-.content ul li .left{
-	width: 16px;
-	height: 32px;
-	line-height: 32px;
+.content ul .left{
+	width: 20px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
 	background-color: rgba(176, 176, 176, 0.8);
 	font-size: 20px;
 	color: white;
@@ -1261,10 +1582,11 @@ del{
 	left: 0px;
 	display: none;
 }
-.content ul li .right{
-	width: 16px;
-	height: 32px;
-	line-height: 32px;
+.content ul .right{
+	width: 20px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
 	background-color: rgba(176, 176, 176, 0.8);
 	font-size: 20px;
 	color: white;
@@ -1276,9 +1598,11 @@ del{
 }
 .content ul li:hover .left{
 	display: block;
+	cursor: pointer;
 }
 .content ul li:hover .right{
 	display: block;
+	cursor: pointer;
 }
 /* 内容结束 */
 
