@@ -280,21 +280,42 @@ function commend(leftbutton,rightbutton,miList,width){
 
 }
 
-//选项卡
-let lis=document.querySelectorAll(".outer");
-	let inn=document.querySelectorAll(".bn-choose");
+//banner选项卡
+	let lis=document.querySelectorAll(".banner .container .text .title .list");
+	let inn=document.querySelectorAll(".banner .text .list .bn-choose");
 	// console.log(lis);
 	for(let i=0;i<lis.length;i++){
 		lis[i].onmouseenter=function(){
 			for(let j=0;j<inn.length;j++){
 				inn[j].style.display="none";
 			}
-		inn[i].style.display="flex";
+			inn[i].style.display="flex";
 		}
 		lis[i].onmouseleave=function(){
 			inn[i].style.display="none";
 		}
 	}
+
+//家电 选项卡
+	//声明
+	let father=document.querySelectorAll(".house .container .top-right .title span1");	
+	let son=document.querySelectorAll(".house .right .list ul");
+	// console.log(son);
+	//函数
+	function house(lis,inn){
+		for(let i=0;i<lis.length;i++){
+			lis[i].onmouseenter=function(){
+				for(let j=0;j<inn.length;j++){
+					inn[j].style.display="none";
+					lis[j].classList.remove("active");
+				}
+				inn[i].style.display="block";
+				lis[i].classList.add("active");
+			}
+		}
+	}
+	house(father,son);//调用家电函数
+	
 
 	// 导航下拉菜单
 	let text=document.querySelectorAll(".top-white .title a");
@@ -312,6 +333,17 @@ let lis=document.querySelectorAll(".outer");
 		}
 	}
 
+	//返回顶部
+	window.onscroll=function () {
+        let bh = document.body.scrollTop || document.documentElement.scrollTop;
+        let back = document.querySelectorAll(".box .back")[0];
+        let wh=window.innerHeight;
+        back.onclick = function () {
+            animate(document.body, {scrollTop: 0}, 600);
+            animate(document.documentElement, {scrollTop: 0}, 600);
+        }
+    }
+
 
 
 
@@ -320,6 +352,6 @@ let lis=document.querySelectorAll(".outer");
     small(message2,num2,lBtn2,rBtn2,width2);//调用小轮播
     small(message3,num3,lBtn3,rBtn3,width3);//调用小轮播
     small(message4,num4,lBtn4,rBtn4,width4);//调用小轮播
-    flashover(left1,right1,miList1,wh);
-    commend(left2,right2,miList2,wd);
+    flashover(left1,right1,miList1,wh);//调用闪购平移
+    commend(left2,right2,miList2,wd);//调用内容平移
 }

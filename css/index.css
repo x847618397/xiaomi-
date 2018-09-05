@@ -368,40 +368,6 @@ input.text:focus .right{
 	z-index: 99;
 	background-color: rgba(0, 0, 0,0.4);
 }
-.banner .text .ul-outer{
-	width: 240px;
-	height: 460px;
-	padding: 20px 0;
-	z-index: 10;
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.banner .text .ul-outer li.outer{
-/* 	width: 100%; */
-	height: 42px;
-	line-height: 42px;
-	background-color: rgba(0, 0, 0, 0);
-	margin-right: 0;
-	margin-bottom: 0;
-	overflow: visible;
-}
-.banner .text .ul-outer li.outer a.bn-choose-title{
-	display: block;
-	width: 214px;
-	height: 100%;
-	color: #fff;
-	margin-left: 26px;
-	margin-right: 0;
-	background-color: rgba(0, 0, 0, 0);
-	font-size: 14px;
-	text-decoration: none;
-	position: relative;
-
-}
-/* .banner .text ul.ul-outer li.outer:hover{
-	background: #ff6700;
-} */
 .banner .text ul.ul-outer li.outer a.bn-choose-title i{
 	color: #fff;
 	font-style: normal;
@@ -409,25 +375,20 @@ input.text:focus .right{
 	right: 24px;
 	top: 0;
 }
-/* .banner .container .text .title{
+.banner .container .text .title{
 	width: 100%;
-	height: 42px;
 	line-height: 40px;
+	width: 240px;
+	height: 425px;
+	padding: 20px 0;
+	position: relative;
 }
-.banner .container .text .title:hover{
-	background-color: #FF6700;
-}
-.banner .container .text .title:nth-child(1){
-	margin-top: 20px;
-}
-.banner .container .text .title:nth-child(10){
-	margin-bottom: 20px;
-}
+
 .banner .container .text .title a{
 	display: block;
-	height: 40px;
+	height: 47px;
 	width: 100%;
-	line-height: 40px;
+	line-height: 47px;
 	padding-left: 30px;
 	box-sizing: border-box;
 	position: relative;
@@ -435,7 +396,10 @@ input.text:focus .right{
 	text-decoration: none;
 	font-size: 14px;
 	color: white;
-} */
+}
+.banner .container .text .title .bn-choose-title:hover{
+	background-color: #FF6700;
+}
 .banner .container .text .title a i{
 	/* 文字样式：normal正常/italic倾斜 */
 	font-style: normal;
@@ -446,45 +410,60 @@ input.text:focus .right{
 }
 
 /* 选项卡开始 */
-.banner .text ul.ul-outer li.outer .bn-choose{
-	/* width: 992px; */
+.banner .text .title .bn-choose{
 	height: 460px;
 	background: #fff;
 	position: absolute;
 	top: 0px;
-	left: 234px;
+	left: 240px;
 	z-index: 20;
-	border: 1px solid #e0e0e0;
 	box-shadow: 0 8px 16px rgba(0,0,0,0.18);
-	display: flex;
 	display: none;
 }
 .banner .bn-choose ul.inner{
-	width: 248px;
-	height: 458px;
+	width: 250px;
+	height: 460px;
 	padding: 2px 0;
 }
 .banner .bn-choose ul.inner li{
-	position: relative;
     float: left;
-    width: 265px;
+    width: 250px;
     height: 76px;
+    margin-right: 0;
     margin-bottom: 0;
 }
+.banner .bn-choose ul.inner li:hover{
+	transform: translateY(0px);
+	box-shadow: none;
+}
 .banner .bn-choose ul.inner li.inner a{
-	padding: 18px 20px;
+	background-color: white;
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding-left: 0;
 	display: flex;
 }
+.banner .bn-choose ul.inner li.inner a:hover span{
+	color: #ff6700;
+}
 .banner .bn-choose ul.inner li.inner img{
-	width: 40px;
+	width: 16%;
 	height: 40px;
-	margin-right: 12px;
-	display: block;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 18px;
+/* 	float: left; */
 }
 .banner .bn-choose ul.inner li.inner span{
-	line-height: 40px;
+	width: 70%;
+	height: 100%;
+/* 	float: right; */
+	margin-top: 0;
+	line-height: 76px;
 	color: #333;
 	font-size: 14px;
+	text-align: left;
 }
 /* 选项卡结束 */
 
@@ -778,6 +757,12 @@ ul li{
 	transition-timing-function: linear;
 	overflow: hidden;
 }
+/* 列表鼠标悬浮效果 开始 */
+ul li:hover{
+	transform: translateY(-4px);
+	box-shadow: 0  12px 30px rgba(0, 0, 0, 0.2);
+}
+/* 列表鼠标悬浮效果 结束 */
 .flashover ul li:hover{
 	transform: none;
 	box-shadow: none;
@@ -1057,6 +1042,7 @@ del{
 	width: 1240px;
 	height: 100%;
 	margin: 0 auto;
+	position: relative;
 }
 .house .container .top{
 	height: 80px;
@@ -1072,55 +1058,98 @@ del{
 	line-height: 58px;
 	float: right;
 }
-.house .container .top-right .title span3{
+.house .container .top-right .title span1{
 	color: #49494C;
+	padding-bottom: 4px;
 	font-size: 16px;
 	margin-right: 22px;
 	cursor: pointer;
 }
-.house .container .top-right .title span1{
-	margin-right: 30px;
+.house .container .top-right .title .active{
 	color: #ff6700;
 	border-bottom: 2px solid #ff6700;
-	font-size: 16px;
-	cursor: pointer;
 }
 .house .container .top-right .title span1:hover {
-	color: orange;
+	color: #ff6700;
+	border-bottom: 2px solid #ff6700;
 }
-.house .container .top-right .title span3:hover {
-	color: orange;
+
+/* 家电内容开始 */
+.house .left{
+	width: 242px;
+	height: 620px;
+	position: absolute;
+	left: 0;
+	top: 80px;
 }
-.house .container .top-right .title span2:hover {
-	color: orange;
+.house .left .up{
+	width: 232px;
+	height: 300px; 
+	margin-right: 20px;
+	margin-bottom: 20px;
+	transition: all .2s;
+	transition-timing-function: linear;
+	background-image: url('../img/house up.jpg');
+	background-position: center;
+	background-size: cover;
 }
-.house .container .top-right .title span2{
-	color: #49494C;
-	font-size: 16px;
-	cursor: pointer;
+.house .left .up:hover{
+	transform: translateY(-4px);
+	box-shadow: 0  12px 30px rgba(0, 0, 0, 0.2);
+}
+.house .left .down{
+	width: 232px;
+	height: 300px; 
+	margin-right: 20px;
+	transition: all .2s;
+	transition-timing-function: linear;
+	background-image: url('../img/house down.jpg');
+	background-position: center;
+	background-size: cover;
+}
+.house .left .down:hover{
+	transform: translateY(-4px);
+	box-shadow: 0  12px 30px rgba(0, 0, 0, 0.2);
+}
+.house .right{
+	width: 988px;
+	height: 620px;
+	position: absolute;
+	right: 0;
+	top: 80px;
+}
+
+.house .right .list{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.house .right ul{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+/* 	display: flex;
+	justify-content: space-between;
+	align-content: space-between;
+	flex-wrap: wrap; */
 }
 .house ul li{
+	height: 300px;
 	background: white;
+/* 	margin-bottom: 0;
+	margin-right: 0; */
 }
-.house ul li:nth-child(1){
-	background-image: url('../img/d1.jpg');
-	background-position: center;
-	background-size: cover;
-}
-.house ul li:nth-child(5){
+.house ul li:nth-child(4){
 	margin-right: 0;
 }
-.house ul li:nth-child(6){
-	background-image: url('../img/d6.jpg');
-	background-position: center;
-	background-size: cover;
-}
-.house ul li:nth-child(10){
+.house ul li:nth-child(8){
 	height: 140px;
 	margin-right: 0;
 	margin-bottom: 20px;
 }
-.house ul li:nth-child(11){
+.house ul li:nth-child(9){
 	height: 140px;
 	margin-right: 0;
 }
@@ -1130,6 +1159,7 @@ del{
 	margin-top: 30px;
 	margin-left: 36px;
 }
+
 /* 隐藏橙色框 */
 .house ul li .orange{
 	width: 232px;
@@ -1947,12 +1977,6 @@ footer .bottom{
 
 /* 底部结束 */
 
-/* 列表鼠标悬浮效果 开始 */
-ul li:hover{
-	transform: translateY(-4px);
-	box-shadow: 0  12px 30px rgba(0, 0, 0, 0.2);
-}
-/* 列表鼠标悬浮效果 结束 */
 
 
 /* 固定标签开始 */
@@ -2005,7 +2029,22 @@ ul li:hover{
 .box .bottom1:nth-child(3){
 	background-image: url('../img/buy.png');
 }
-.box .bottom1:nth-child(4){
+.box .back{
+	margin-bottom: 10px;
+	width: 80px;
+	height: 80px;
+	background-color: white;
+	background-size: 44px 40px;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
 	background-image: url("../img/top.png");
+}
+.box .back p{
+	font-size: 14px;
+	color: #B7B0B7;
+	position: absolute;
+	bottom: 0;
+	left: 20px;
 }
 /* 固定标签结束 */
