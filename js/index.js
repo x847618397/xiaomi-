@@ -283,7 +283,7 @@ function commend(leftbutton,rightbutton,miList,width){
 //banner选项卡
 	let lis=document.querySelectorAll(".banner .container .text .title .list");
 	let inn=document.querySelectorAll(".banner .text .list .bn-choose");
-	// console.log(lis);
+	console.log(lis);
 	for(let i=0;i<lis.length;i++){
 		lis[i].onmouseenter=function(){
 			for(let j=0;j<inn.length;j++){
@@ -318,8 +318,8 @@ function commend(leftbutton,rightbutton,miList,width){
 	
 
 	// 导航下拉菜单
-	let text=document.querySelectorAll(".top-white .title a");
-	let menu=document.querySelectorAll(".navmenu");
+	let text=document.querySelectorAll(".top-white .title .list");
+	let menu=document.querySelectorAll(".top-white .navmenu");
 	// console.log(menu);
 	for(let x=0;x<text.length;x++){
 		text[x].onmouseenter=function(){
@@ -344,9 +344,43 @@ function commend(leftbutton,rightbutton,miList,width){
         }
     }
 
+//倒计时
+    function djs(spans){
+    	setDate();
+        setInterval(setDate,1000);
+        function setDate(){
+            let arr=fn();
+            for (var a=0; a<spans.length;a++) {
+				spans[a].innerHTML=arr[a];
+            }  
+            // console.log(spans);
+        }
+        function fn() {
+            let arr = [];
+            let now = new Date();
+            let future = new Date(2018,9,1,18,0,0);
+            let time = Math.floor((future.getTime() - now.getTime()) / 1000);
 
+            //月
+            // let month = Math.floor(time / (30 * 24 * 60 * 60));
+            // arr.push(month);
+            // let day = Math.floor(time % (30 * 24 * 60 * 60) / (24 * 60 * 60));
+            // arr.push(day);
+            let hour = Math.floor(time % (30 * 24 * 60 * 60) % (24 * 60 * 60) / (60 * 60));
+            arr.push(hour);
+            let m = Math.floor(time % (30 * 24 * 60 * 60) % (24 * 60 * 60) % (60 * 60) / (60));
+            arr.push(m);
+            let s = Math.floor(time % (30 * 24 * 60 * 60) % (24 * 60 * 60) % (60 * 60) % (60));
+            arr.push(s);
 
+            return arr;
+        }
+    }
+    let spans=document.querySelectorAll(".flashover ul li .time");
+    console.log(spans);
+    
 
+    djs(spans);//倒计时
 	big(imgs,dots,banner,leftBtn,rightBtn,widths);//调用大轮播图
     small(message1,num1,lBtn1,rBtn1,width1);//调用小轮播
     small(message2,num2,lBtn2,rBtn2,width2);//调用小轮播

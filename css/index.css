@@ -9,6 +9,24 @@ a{
 	text-decoration: none;
 	color:inherit;
 }
+ul li{
+	width: 232px;
+	height: 100%; 
+	float: left;
+	background-color: #FAFAFA;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	list-style: none;
+	transition: all .2s;
+	transition-timing-function: linear;
+	overflow: hidden;
+}
+/* 列表鼠标悬浮效果 开始 */
+ul li:hover{
+	transform: translateY(-4px);
+	box-shadow: 0  12px 30px rgba(0, 0, 0, 0.2);
+}
+/* 列表鼠标悬浮效果 结束 */
 .top{
 	width: 100%;
 	height: 120px;
@@ -172,23 +190,6 @@ a{
 	height: 60px;
 	width: 160px;
 }
-.top-white .title{
-	height: 100px;
-	width: 740px;
-	float: left;
-	margin-left: 10px;
-	position: relative;
-}
-.top-white .title a{
-	text-decoration: none;
-	font-size: 16px;
-	color: #333333;
-	line-height: 100px;
-	margin-right: 16px;
-}
-.top-white .title a:hover{
-	color: #ff6700;
-}
 .top-white .found{
 	float: left;
 	width: 260px;
@@ -242,6 +243,32 @@ input.text:focus .right{
 	color: white;
 }
 
+.top-white .title{
+	height: 100px;
+	width: 740px;
+	float: left;
+	margin-left: 10px;
+	position: relative;
+}
+.top-white .title .list{
+	margin-right: 16px;
+	float: left;
+	text-align: center;
+}
+.top-white .title a{
+	text-decoration: none;
+	font-size: 16px;
+	color: #333333;
+	line-height: 100px;
+
+}
+.top-white .title a:hover{
+	color: #ff6700;
+}
+.top-white .title a:hover .navmenu{
+	
+}
+
 /* 下拉菜单开始 */
 .top-white .navmenu{
 	height: 240px;
@@ -254,7 +281,6 @@ input.text:focus .right{
     box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     display: none;
     /* padding-top: 40px; */
-
 }
 .top-white .navmenu ul{
 	height: 220px;
@@ -280,6 +306,10 @@ input.text:focus .right{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.top-white .navmenu ul li:hover{
+	transform: none;
+	box-shadow: none;
 }
 .top-white .navmenu ul li:after{
 	position: absolute;
@@ -366,7 +396,7 @@ input.text:focus .right{
 	left: 0;
 	top: 0;
 	z-index: 99;
-	background-color: rgba(0, 0, 0,0.4);
+	background-color: rgba(0, 0, 0,0.5);
 }
 .banner .text ul.ul-outer li.outer a.bn-choose-title i{
 	color: #fff;
@@ -377,7 +407,6 @@ input.text:focus .right{
 }
 .banner .container .text .title{
 	width: 100%;
-	line-height: 40px;
 	width: 240px;
 	height: 425px;
 	padding: 20px 0;
@@ -386,9 +415,9 @@ input.text:focus .right{
 
 .banner .container .text .title a{
 	display: block;
-	height: 47px;
+	height: 42px;
 	width: 100%;
-	line-height: 47px;
+	line-height: 42px;
 	padding-left: 30px;
 	box-sizing: border-box;
 	position: relative;
@@ -695,6 +724,7 @@ input.text:focus .right{
 	color: #E0E0E0;
 	float: left;
 	margin-top:30px;
+	cursor: pointer;
 }
 .flashover .container .left:hover{
 	color: #ff6700;
@@ -710,6 +740,7 @@ input.text:focus .right{
 	color: #E0E0E0;
 	float: right;
 	margin-top:30px;
+	cursor: pointer;
 }
 .flashover .container .active{
 	color: #B0B0B2;
@@ -745,24 +776,6 @@ input.text:focus .right{
 	margin: 0 auto;
 	position: relative;
 }
-ul li{
-	width: 232px;
-	height: 100%; 
-	float: left;
-	background-color: #FAFAFA;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	list-style: none;
-	transition: all .2s;
-	transition-timing-function: linear;
-	overflow: hidden;
-}
-/* 列表鼠标悬浮效果 开始 */
-ul li:hover{
-	transform: translateY(-4px);
-	box-shadow: 0  12px 30px rgba(0, 0, 0, 0.2);
-}
-/* 列表鼠标悬浮效果 结束 */
 .flashover ul li:hover{
 	transform: none;
 	box-shadow: none;
@@ -1979,22 +1992,23 @@ footer .bottom{
 
 
 
-/* 固定标签开始 */
+/* top固定标签开始 */
 .box{
 	width: 80px;
 	height: 330px;
 	position: fixed;
-	top: 350px;
+	bottom: 100px;
 	right: 0;
 }
 .box .bottom{
 	width: 80px;
 	height: 80px;
 	background-color: white;
-	background-size: 50px 50px;
+	background-size: 30px 30px;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
+	cursor: pointer;
 }
 .box .bottom p{
 	font-size: 14px;
@@ -2010,14 +2024,15 @@ footer .bottom{
 	background-image: url('../img/help.png');
 }
 .box .bottom1{
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	width: 80px;
 	height: 80px;
 	background-color: white;
-	background-size: 44px 40px;
+	background-size: 35px 30px;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
+	cursor: pointer;
 }
 .box .bottom1 p{
 	font-size: 14px;
@@ -2034,11 +2049,12 @@ footer .bottom{
 	width: 80px;
 	height: 80px;
 	background-color: white;
-	background-size: 44px 40px;
+	background-size: 35px 30px;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
 	background-image: url("../img/top.png");
+	cursor: pointer;
 }
 .box .back p{
 	font-size: 14px;
@@ -2047,4 +2063,4 @@ footer .bottom{
 	bottom: 0;
 	left: 20px;
 }
-/* 固定标签结束 */
+/* top固定标签结束 */
